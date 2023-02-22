@@ -29,11 +29,19 @@ public class RetailApplication extends Application {
     }
 
     private static void onClose(Stage stage) {
+        stage.setOnCloseRequest(windowEvent -> Platform.exit());
     }
 
     private static void setPosition(Stage stage) {
+        stage.setX(Screen.getPrimary().getOutputScaleX());
+        stage.setY(Screen.getPrimary().getOutputScaleY());
     }
 
     private void setIcon(Stage stage) {
+        // getClass().getResource("icon/livraison-rapide.png"); Get Resource from resources folder
+        Image icon = new Image(
+                Objects.requireNonNull(getClass().getResourceAsStream("icon/livraison-rapide.png"))
+        );
+        stage.getIcons().add(icon);
     }
 }
