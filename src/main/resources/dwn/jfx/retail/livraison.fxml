@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="pane" fx:id="livPane"
+            maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/11.0.14-internal"
+            fx:controller="dwn.jfx.retail.LivraisonController">
+    <children>
+        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true"
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@icon/livraison-rapide.png"/>
+            </image>
+        </ImageView>
+        <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
+            <Label id="label" fx:id="livLb" alignment="CENTER" text="Label" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <ProgressBar xmlns:fx="http://javafx.com/fxml/1" id="progress" fx:id="LivPg" prefHeight="12.0" progress="0.0"
+                         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                         AnchorPane.topAnchor="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal">
+                <padding>
+                    <Insets bottom="1.0" left="2.0" right="2.0" top="1.0"/>
+                </padding>
+            </ProgressBar>
+        </AnchorPane>
+    </children>
+    <padding>
+        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+    </padding>
+</AnchorPane>

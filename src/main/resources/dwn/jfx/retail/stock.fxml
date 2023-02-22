@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0"
+           xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="dwn.jfx.retail.StockController">
+</SplitPane>
