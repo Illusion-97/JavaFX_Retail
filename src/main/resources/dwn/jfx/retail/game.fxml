@@ -1,7 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid inside; -fx-border-width: 2; -fx-border-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dwn.jfx.retail.GameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid inside; -fx-border-width: 2; -fx-border-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dwn.jfx.retail.GameController">
+    <bottom>
+        <AnchorPane disable="true" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.3);" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+            <ProgressBar id="prgrsbr" fx:id="gameProgressBar" prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label fx:id="gameTimerText" alignment="CENTER" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        </AnchorPane>
+    </bottom>
+    <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <Accordion AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <!-- expandedPane="$fchrtp"-->
+                <panes>
+                    <TitledPane fx:id="detailCommandeTPane" animated="false" expanded="false" focusTraversable="false" text="Commande">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                            <BorderPane fx:id="commandePanel" layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <bottom>
+                                    <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                                        <padding>
+                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        </padding>
+                                        <Button fx:id="validerCommandeButton" disable="true" mnemonicParsing="false" text="Valider la vente" />
+                                    </HBox>
+                                </bottom>
+                                <top>
+                                    <SplitPane dividerPositions="0.29797979797979796" BorderPane.alignment="CENTER">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                            <Label fx:id="tauxCommandeLabel" alignment="CENTER" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                            <ProgressBar fx:id="commandeProgressBar" layoutX="-14.0" prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        </AnchorPane>
+                                    </SplitPane>
+                                </top>
+                                <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                </padding>
+                                <center>
+                                    <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                                        <AnchorPane SplitPane.resizableWithParent="false">
+                                            <Label fx:id="produitCommandeLabel" alignment="CENTER" layoutX="171.0" layoutY="10.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <font>
+                                                    <Font size="18.0" />
+                                                </font>
+                                            </Label>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                            <SplitPane dividerPositions="0.5" layoutX="51.0" layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <SplitPane dividerPositions="0.2" layoutX="10.0" layoutY="-22.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                            <Label alignment="CENTER" layoutX="45.0" layoutY="6.0" prefHeight="28.0" prefWidth="179.0" text="Requis" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                <font>
+                                                                    <Font size="18.0" />
+                                                                </font>
+                                                            </Label>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                            <Label fx:id="qteCommandeLabel" alignment="CENTER" layoutX="76.0" layoutY="51.0" prefHeight="119.0" prefWidth="179.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                <font>
+                                                                    <Font size="24.0" />
+                                                                </font>
+                                                            </Label>
+                                                        </AnchorPane>
+                                                    </SplitPane>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <SplitPane dividerPositions="0.2" layoutX="10.0" layoutY="-37.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                            <Label alignment="CENTER" layoutX="61.0" layoutY="6.0" text="Disponible" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                <font>
+                                                                    <Font size="18.0" />
+                                                                </font>
+                                                            </Label>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                            <Label fx:id="stockLabel" alignment="CENTER" layoutX="68.0" layoutY="51.0" prefHeight="119.0" prefWidth="178.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                <font>
+                                                                    <Font size="24.0" />
+                                                                </font>
+                                                            </Label>
+                                                        </AnchorPane>
+                                                    </SplitPane>
+                                                </AnchorPane>
+                                            </SplitPane>
+                                        </AnchorPane>
+                                    </SplitPane>
+                                </center>
+                            </BorderPane>
+                        </AnchorPane>
+                    </TitledPane>
+                    <TitledPane focusTraversable="false" text="Livraisons">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                            <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <VBox fx:id="livraisonsVBox" alignment="TOP_CENTER" spacing="5.0" />
+                            </ScrollPane>
+                        </AnchorPane>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </AnchorPane>
+    </center>
+    <top>
+        <SplitPane dividerPositions="0.7" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.8">
+                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="RetailGame" />
+                <AnchorPane>
+                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#showStock" text="Stock" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                </AnchorPane>
+            </SplitPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+                <TextField id="srchtf" fx:id="soldeTextField" alignment="CENTER_RIGHT" disable="true" editable="false" focusTraversable="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.5" AnchorPane.leftAnchor="2.5" AnchorPane.topAnchor="2.5">
+                    <Image url="@icon/money.png" />
+                </ImageView>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
 
+            </AnchorPane>
+        </SplitPane>
+    </top>
+    <left>
+        <AnchorPane prefWidth="200.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <Label alignment="CENTER" prefHeight="20.0" text="Commandes" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="5.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                <VBox fx:id="commandesVBox" alignment="TOP_CENTER" spacing="5.0" />
+            </ScrollPane>
+        </AnchorPane>
+    </left>
 </BorderPane>

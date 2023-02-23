@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static dwn.jfx.retail.tools.Monetize.getMoneyString;
-
 
 public class GameController extends Stage implements Initializable {
 
