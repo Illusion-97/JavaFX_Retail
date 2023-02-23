@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static dwn.jfx.retail.tools.Monetize.getMoneyString;
+
 
 public class GameController extends Stage implements Initializable {
 
@@ -51,21 +53,27 @@ public class GameController extends Stage implements Initializable {
         // bind
         // RetailService.getMoney() -> DoubleProperty
         // getMoneyString(DoubleProperty) -> StringProperty
-        // soldeLabel <- StringProperty
+        // soldeTextField <- StringProperty
+        soldeTextField.textProperty().bind(getMoneyString(RetailService.getMoney()));
     }
 
     private void bindGameProgressBar() {
-        // RetailService.getGameProgress()
+        gameProgressBar.progressProperty().bind(RetailService.getGameProgress());
     }
 
     private void bindGameTimerLabel() {
-        // RetailService.getGameTimer()
+        gameTimerText.textProperty().bind(RetailService.getCurrentGameTime());
     }
 
     private void bindSelectedCommand() {
         // On souhaite ici mettre à jour tous les champs du panel Commande
         // avec les informations d'une commande selectionnée
         // RetailService.setOnCommandSelected(lambda)
+        RetailService.setOnCommandSelected(optionalCommand -> {
+            optionalCommand.ifPresent(command -> {
+                // Modifications
+            });
+        });
     }
 
     private void bindDeliveryToVBox() {
