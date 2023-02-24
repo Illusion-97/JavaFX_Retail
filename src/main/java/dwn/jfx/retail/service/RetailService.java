@@ -126,13 +126,13 @@ public class RetailService {
                 .collect(Collectors.toList()));
     }
 
-    public static ObservableList<PieChart.Data> getProductStats(Stock s) {
+    public static ObservableList<PieChart.Data> getProductStats(Product p) {
         PieChart.Data data1 = new PieChart.Data("Commandés", 0);
-        data1.pieValueProperty().bind(StatsService.getCommandesSum(s.getProduit()));
+        data1.pieValueProperty().bind(StatsService.getCommandesSum(p));
         PieChart.Data data2 = new PieChart.Data("Vendus", 0);
-        data2.pieValueProperty().bind(StatsService.getVentesSum(s.getProduit()));
+        data2.pieValueProperty().bind(StatsService.getVentesSum(p));
         PieChart.Data data3 = new PieChart.Data("Stock", 0);
-        data3.pieValueProperty().bind(RetailService.getStock(s.getProduit()));
+        data3.pieValueProperty().bind(RetailService.getStock(p));
         return FXCollections.observableArrayList(data1, data2, data3);
     }
 
