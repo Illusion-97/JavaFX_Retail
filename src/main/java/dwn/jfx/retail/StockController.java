@@ -68,27 +68,42 @@ public class StockController implements Initializable {
     }
 
     private void bindBanque() {
+        // soldeLabel
     }
 
     private void bindQuantite() {
+        // qteTF : TextProperty -> IntegerProperty
+        // qteTF -> selectedQuantite
     }
 
     private void bindDuration() {
+        //durationLAbel <- Delivery.getDuration(qte)
     }
 
     private void bindTableView() {
+        // RetailService.getStockObservableList() : ObservableList<Stock>
+        // Pour chaque colonne dire quoi afficher par rapport à un objet de type stock
+        // La fonction à utiliser contiens 4 mots et attends une lambda<Stock>
     }
 
     public void bindChart() {
+        // selectedProduit -> RetailService.getProductStats -> stPC
     }
 
     private void bindProduit() {
+        // selectedProduit <- stockTV
+        // productLabel <- selectedProduit
     }
 
     private void bindCout() {
         DoubleProperty produitCout = new SimpleDoubleProperty(0);
+        // produitCout <- selectedProduit
+        // cout <- produitCout multiply selectedQuantite
+        // ctLb <- getMoneyString(cout)
     }
 
     private void bindCommanderButton() {
+        // disableProperty -> produit.isNull() | selectedQuantite < | cout > RetailService.getMoney
+        // action -> RetailService.newLivraison(selectedProduit, selectedQuantite)
     }
 }
