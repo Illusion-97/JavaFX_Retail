@@ -1,6 +1,7 @@
 package dwn.jfx.retail;
 
 import dwn.jfx.retail.models.Command;
+import dwn.jfx.retail.models.Delivery;
 import dwn.jfx.retail.service.RetailService;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ObservableList;
@@ -127,6 +128,17 @@ public class GameController extends Stage implements Initializable {
         // Il faut ajouter un Panel existant (livraison.fxml)
         // Delivery.setAnchorPaneCreator(lambda)
         // Comment récupérer un template et mettre à jour ses valeurs
+        Delivery.setAnchorPaneCreator(livraison -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("livraison.fxml"));
+                fxmlLoader.load();
+                LivraisonController livraisonController = fxmlLoader.getController();
+                return livraisonController.bind(livraison);
+            } catch (IOException e) {
+                showExceptionAlert(e);
+                return null;
+            }
+        });
     }
 
     public void showStock() {
